@@ -143,6 +143,7 @@
     <Content Include="App\contact\controller\contactController.js" />
     <Content Include="App\contact\html\contactForm.html" />
     <Content Include="App\contact\html\contactList.html" />
+    <Content Include="App\contact\html\deleteModal.html" />
     <Content Include="App\DataService\contactDataService.js" />
     <Content Include="App\home\about.html" />
     <Content Include="App\home\home.html" />

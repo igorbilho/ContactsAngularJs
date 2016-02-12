@@ -17,6 +17,16 @@
         templateUrl: "app/contact/html/contactForm.html"
     }),
 
+    $routeProvider.when('/mycontacts/newcontact', {
+        templateUrl: "app/contact/html/contactForm.html",
+        controller: "contactAddController"
+    }),
+
+    $routeProvider.when('/mycontacts/:id', {
+        templateUrl: "app/contact/html/contactForm.html",
+        controller: "contactEditController"
+    }),
+
     $routeProvider.otherwise({
         redirectTo: '/'
     });

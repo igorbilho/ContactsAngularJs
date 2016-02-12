@@ -23,6 +23,7 @@
                         <td>First Name</td>
                         <td>Email</td>
                         <td>Mobile</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,11 @@
                         <td>{{contact.firstName}}</td>
                         <td>{{contact.email}}</td>
                         <td>{{contact.mobile}}</td>
+                        <td>
+                            <a class="btn btn-primary" href="#/mycontacts/{{contact.id}}">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

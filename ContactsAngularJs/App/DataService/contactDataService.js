@@ -19,10 +19,75 @@ function ($http, $q) {
         return deferred.promise;
     }
 
+    var _addContact = function (_contact) {
+        var deferred = $q.defer();
+        var controllerQuery = "contact/AddContact";
+
+        $http.post(controllerQuery, _contact)
+          .then(function (result) {
+              //Success
+              deferred.resolve();
+          },
+          function (error) {
+              // Error
+              deferred.reject();
+          });
+        return deferred.promise;
+
+    };
+
+    var _updateContact = function (_contact) {
+        var deferred = $q.defer();
+        var controllerQuery = "contact/UpdateContact";
+
+        $http.post(controllerQuery, _contact)
+          .then(function (result) {
+              deferred.resolve();
+          },
+          function (error) {
+              // Error
+              deferred.reject();
+          });
+        return deferred.promise;
+
+    };
+
+    var _deleteContact = function (id) {
+        var deferred = $q.defer();
+        var controllerQuery = "contact/DeleteContact/" + id;
+
+        $http.post(controllerQuery)
+          .then(function (result) {
+              deferred.resolve();
+          },
+          function (error) {
+              // Error
+              deferred.reject();
+          });
+        return deferred.promise;
+
+    };
+
+
+    function _findContactById(id) {
+        var found = null;
+        $.each(_contacts, function (i, contact) {
+            if (contact.id == id) {
+                found = contact;
+                return false;
+            }
+        });
+        return found;
+    };
+
     //Expose methods and fields through revealing pattern
     return {
         contacts: _contacts,
-        getContacts: _getContacts
+        getContacts: _getContacts,
+        addContact: _addContact,
+        updateContact: _updateContact,
+        deleteContact: _deleteContact,
+        findContactById: _findContactById
     }
 
 }]);
