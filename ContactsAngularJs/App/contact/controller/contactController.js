@@ -1,28 +1,21 @@
 ﻿contactApp.controller('contactController',
-    ['$scope',
-    function categoryController($scope) {
+    ['$scope', 'contactDataService', '$location',
+    function categoryController($scope, contactDataService) {
+        $scope.contacts = [];
 
-        $scope.contacts = [
-            {
-                firstName: 'John',
-                lastName: 'Parson',
-                email: 'parson@gmail.com',
-                mobile: '233-900-2933'
-            },
-            {
-                firstName: 'Joe',
-                lastName: 'Paris',
-                email: 'paris@gmail.com',
-                mobile: '233-900-2933'
-            },
-            {
-                firstName: 'Donna',
-                lastName: 'Lim',
-                email: 'lim@gmail.com',
-                mobile: '552-221-2222'
-            }
-        ];
+        loadContactData();
 
-        $scope.contact = {};
+        function loadContactData() {
+            contactDataService.getContacts()
+            .then(function () {
+                $scope.contacts = contactDataService.contacts;
+            },
+                function () {
+                    //Error goes here...
+                })
+                .then(function () {
+                    $scope.isBusy = false;
+                });
+        };
 
     }]);
