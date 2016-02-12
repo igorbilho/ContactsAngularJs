@@ -29,7 +29,8 @@ namespace ContactsAngularJs
                       "~/Scripts/angular-resource.js",
                       "~/Scripts/angular-ui/ui-bootstrap.js",
                       "~/App/contactApp.js",
-                      "~/App/clientRoute.js"));
+                      "~/App/clientRoute.js",
+                      "~/App/contact/controller/contactController.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

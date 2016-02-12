@@ -128,6 +128,9 @@
   <ItemGroup>
     <Content Include="App\clientRoute.js" />
     <Content Include="App\contactApp.js" />
+    <Content Include="App\contact\controller\contactController.js" />
+    <Content Include="App\contact\html\contactForm.html" />
+    <Content Include="App\contact\html\contactList.html" />
     <Content Include="App\home\about.html" />
     <Content Include="App\home\home.html" />
     <Content Include="Content\bootstrap-theme.css" />
